@@ -1,0 +1,27 @@
+// Find the Product of Digits  using Recursion
+
+// input:
+// 1234
+
+// output:
+// 24
+
+// Explanation:
+// 1x2x3x4 => 24
+
+
+import java.util.*;
+public class Main
+{
+    static int prod(int n){
+        if (n==1){
+        return 1;}
+        else{
+        return n%10*prod(n/10);}
+    }
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		System.out.println(prod(n));
+	}
+}
