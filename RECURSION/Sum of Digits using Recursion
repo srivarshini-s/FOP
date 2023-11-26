@@ -1,0 +1,28 @@
+//  Find the sum of Digits using Recursion
+
+//  input:
+//  1234
+
+//  output:
+//  10
+
+// Explanation:
+// 1+2+3+4 => 10
+
+CODE:
+
+import java.util.*;
+public class Main
+{
+    static int sumd(int n){
+        if (n==0){
+        return 0;}
+        else{
+        return n%10+sumd(n/10);}
+    }
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		System.out.println(sumd(n));
+	}
+}
