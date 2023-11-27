@@ -1,0 +1,36 @@
+// Find the number in Fibonacci order 
+
+// Input:
+// 6
+
+// Output:
+// 8
+
+// Explanation:
+// 1 1 2 3 5 8
+
+// Since the sixth Fibonacci number is 8
+
+// Using Recursion
+
+
+import java.util.Scanner;
+public class Main
+{
+    static int fib(int n){
+        
+        if (n <= 1)
+            return n;
+        return fib(n-1)+fib(n-2);
+    }
+    
+    
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int f=fib(n);
+		System.out.println(f);
+	}
+}
+
+
