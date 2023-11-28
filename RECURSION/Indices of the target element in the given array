@@ -1,0 +1,57 @@
+// Find all the  indices of the target element in the given array.If not found return -1..Using Recursion
+
+// input:
+// 5 ->length of the array
+// 11 2 3 3 4 -> array elements
+// 3 -> target element
+
+// output:
+// 2 3
+
+// Explanation:
+// The element 3 is found in indices 2 and 3 in the given array
+
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static ArrayList<Integer> findIndices(int[] a, int t, int i) {
+        ArrayList<Integer> foundIndices = new ArrayList<>();
+
+        if (i== a.length) {
+            if (foundIndices.isEmpty()) {
+                foundIndices.add(-1);
+            }
+            return foundIndices;
+        }
+
+        if (a[i] == t) {
+            foundIndices.add(i);
+        }
+
+        foundIndices.addAll(findIndices(a,t,i+ 1));
+
+        return foundIndices;
+    }
+
+    public static void main(String[] args) {
+        Scanner s= new Scanner(System.in);
+        int l= s.nextInt();
+        int[] a= new int[l];
+
+        for (int i=0;i<l;i++) {
+            a[i]=s.nextInt();
+        }
+        int t= s.nextInt();
+
+        ArrayList<Integer> res= findIndices(a,t,0);
+
+        for (int i:res) {
+            System.out.print(i+ " ");
+        }
+    }
+}
+
